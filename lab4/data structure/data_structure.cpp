@@ -2,7 +2,6 @@
 #include<fstream>
 #include <filesystem>
 #include<regex>
-#include<random>
 
 // class file----------------------------------------------------------------------------------------------
 file::file() {}
@@ -129,7 +128,10 @@ void testcase::read_format(){
                 format.push_back(*temp);
                 delete temp;
             }
-            else assert(0);
+            else {
+                cout<<str<<endl;
+                assert(0);
+            }
             temp.clear();
             i++;
         }
@@ -153,7 +155,10 @@ void testcase::read_format(){
         format.push_back(*temp);
         delete temp;
     }
-    else assert(0);
+    else {
+    	cout << str << endl;
+        assert(0);
+    }
     temp.clear();
 }
 

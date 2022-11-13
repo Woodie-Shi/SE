@@ -5,6 +5,7 @@
 #include<vector>
 #include<set>
 #include<assert.h>
+#include<random>
 using namespace std;
 
 class file{
