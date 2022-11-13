@@ -1,8 +1,10 @@
 #ifndef _DATA_STRUCTURE_H
 #define _DATA_STRUCTURE_H
+#include<iostream>
 #include<string>
 #include<vector>
 #include<set>
+#include<assert.h>
 using namespace std;
 
 class file{
@@ -54,9 +56,24 @@ public:
 };
 
 class testcase : public file{
+private:
+    class _type{
+    public:
+        int kind;       // 0->int; 1->char; 2->string
+        int lower;
+        int upper;
+        _type(int t, int l, int u)
+            :   kind(t)
+            ,   lower(l)
+            ,   upper(u) {}
+    };
+    vector<_type> format;
 public:
     testcase(string path, string name);
     void read_format();
+    int generate_int(int lower, int upper, mt19937& generator);
+    char generate_char(mt19937& generator);
+    string generate_str(int lower, int upper, mt19937& generator);
     bool create(int num);
 };
 
