@@ -19,6 +19,7 @@ public:
     string get_path();
     string get_name();
     string get_data();
+    void display();
 };
 
 class folder{
@@ -34,9 +35,11 @@ public:
     // read all the filename, init class file and add into the vector files at the same time.
     void read_file_name();
     string get_path();
+    string get_name();
     int get_num();
     string get_file_name(int no);
     file* get_file(int no);
+    void display();
 };
 
 class sets{

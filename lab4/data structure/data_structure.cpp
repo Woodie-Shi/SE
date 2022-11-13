@@ -20,6 +20,9 @@ void file::read_data(){
 string file::get_path() { return _path; }
 string file::get_name() { return _name; }
 string file::get_data() { return _data; }
+void file::display(){
+    cout << get_name() << ": " << endl << get_data() << endl;
+}
 
 //class folder---------------------------------------------------------------------------------------------
 folder::folder() {}
@@ -43,11 +46,18 @@ void folder::read_file_name(){
 }
 
 string folder::get_path() { return _path; }
+string folder::get_name() { return _name; }
 int folder::get_num() { return _file_num; }
 string folder::get_file_name(int no) { return _files[no].get_name(); }
 
 file* folder::get_file(int no){
     return &_files[no];
+}
+
+void folder::display(){
+    for(auto it = _files.begin();it != _files.end();it++){
+        it->display();
+    }
 }
 
 //class sets-----------------------------------------------------------------------------------------------
