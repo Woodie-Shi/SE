@@ -69,10 +69,16 @@ void sets::resize(int n){
 
 void sets::add_to(int no_1, int no_2){
     for (auto it = _Sets[no_1]._set.begin(); it != _Sets[no_1]._set.end(); it++) {
-        if(no_2 != *it) _Sets[no_2]._set.insert(*it);
+        if(no_2 != *it){
+            _Sets[no_2]._set.insert(*it);
+            _Sets[(*it)]._set.insert(no_2);
+        }
     }
     for (auto it = _Sets[no_2]._set.begin(); it != _Sets[no_2]._set.end(); it++) {
-        if(no_1 != *it) _Sets[no_1]._set.insert(*it);
+        if(no_1 != *it){
+            _Sets[no_1]._set.insert(*it);
+            _Sets[(*it)]._set.insert(no_1);
+        }
     }
     _Sets[no_1]._set.insert(no_2);
     _Sets[no_2]._set.insert(no_1);
