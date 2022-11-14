@@ -7,7 +7,8 @@
 file::file() {}
 file::file(string path, string name)
     :   _path(path)
-    , _name(name) {}
+    , _name(name) 
+    , _same(false) {}
 
 void file::read_data(){
     ifstream ifs(_path + "/" + _name);
@@ -22,6 +23,7 @@ string file::get_data() { return _data; }
 void file::display(){
     cout << get_name() << ": " << endl << get_data() << endl;
 }
+void file::set_same() { _same = true; }
 
 //class folder---------------------------------------------------------------------------------------------
 folder::folder() {}

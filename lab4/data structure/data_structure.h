@@ -13,6 +13,7 @@ private:
     string _path;
     string _name;
     string _data;
+    bool _same;
 public:
     file();
     file(string path, string name);
@@ -20,6 +21,7 @@ public:
     string get_path();
     string get_name();
     string get_data();
+    void set_same();
     void display();
 };
 
