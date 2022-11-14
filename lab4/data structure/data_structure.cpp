@@ -20,6 +20,7 @@ void file::read_data(){
 string file::get_path() { return _path; }
 string file::get_name() { return _name; }
 string file::get_data() { return _data; }
+bool file::get_same() { return _same; }
 void file::display(){
     cout << get_name() << ": " << endl << get_data() << endl;
 }

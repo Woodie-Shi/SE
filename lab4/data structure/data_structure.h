@@ -21,6 +21,7 @@ public:
     string get_path();
     string get_name();
     string get_data();
+    bool get_same();
     void set_same();
     void display();
 };
@@ -31,8 +32,8 @@ private:
     string _name;
     int _file_num;
     vector<string> _file_name;
-    vector<file> _files;
 public:
+    vector<file> _files;
     folder();
     folder(string path, string name);
     // read all the filename, init class file and add into the vector files at the same time.
