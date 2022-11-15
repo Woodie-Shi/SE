@@ -7,7 +7,9 @@ private:
     string _path;
     string _name;
 public:
-    void set_args();
+    preprocess();
+    preprocess(string path, string name);
+    void display_args();
     folder* init_folder();
     void find_same(folder &fd, sets &sts);
 };

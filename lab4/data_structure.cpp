@@ -60,7 +60,7 @@ void folder::read_file_name(){
 string folder::get_path() { return _path; }
 string folder::get_name() { return _name; }
 int folder::get_num() { return _file_num; }
-string folder::get_file_name(int no) { return _files[no].get_name(); }
+string folder::get_file_name(int no) { return _file_name[no]; }
 
 file* folder::get_file(int no){
     return &_files[no];
