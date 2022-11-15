@@ -47,6 +47,16 @@ void folder::read_file(){
     }
 }
 
+void folder::read_file_name(){
+    _file_num = 0;
+    string path = _path + "/" + _name;
+    for (const auto & entry : filesystem::directory_iterator(path)){
+        string str = entry.path().filename().string();
+        _file_name.push_back(str);
+        ++_file_num;
+    }
+}
+
 string folder::get_path() { return _path; }
 string folder::get_name() { return _name; }
 int folder::get_num() { return _file_num; }
