@@ -9,7 +9,7 @@ void preprocess::set_args(){
 
 folder* preprocess::init_folder(){
     folder* fd = new folder(_path, _name);
-    fd->read_file_name();
+    fd->read_file();
     return fd;
 }
 
