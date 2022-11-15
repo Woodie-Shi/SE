@@ -32,7 +32,7 @@ folder::folder(string path, string name)
     :   _path(path)
     ,   _name(name) {}
 
-void folder::read_file_name(){
+void folder::read_file(){
     _file_num = 0;
     string path = _path + "/" + _name;
     for (const auto & entry : filesystem::directory_iterator(path)){
@@ -44,6 +44,16 @@ void folder::read_file_name(){
         f->read_data();
         _files.push_back(*f);
         delete f;
+    }
+}
+
+void folder::read_file_name(){
+    _file_num = 0;
+    string path = _path + "/" + _name;
+    for (const auto & entry : filesystem::directory_iterator(path)){
+        string str = entry.path().filename().string();
+        _file_name.push_back(str);
+        ++_file_num;
     }
 }
 

@@ -37,6 +37,7 @@ public:
     folder();
     folder(string path, string name);
     // read all the filename, init class file and add into the vector files at the same time.
+    void read_file();
     void read_file_name();
     string get_path();
     string get_name();
