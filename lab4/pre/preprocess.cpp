@@ -18,12 +18,12 @@ void preprocess::find_same(folder &fd, sets &sts){
     int num = fd.get_num();
     for(int i = 0;i < num - 1;i++){
         for(int j = i + 1;j < num;j++){
-            if(fd._files[i].get_same() || fd._files[j].get_same()) continue;
-            if(fd._files[i].get_data().compare(fd._files[j].get_data()) == 0){
+            if(fd.get_file(i)->get_same() || fd.get_file(j)->get_same()) continue;
+            if(fd.get_file(i)->get_data().compare(fd.get_file(j)->get_data()) == 0){
                 hassame = 1;
-                fd._files[j].set_same();
+                fd.get_file(j)->set_same();
                 sts.add_to(i, j);
-                cout << "file " << fd._files[i].get_name() << " and file " << fd._files[j].get_name() << " are the same." << endl;
+                cout << "file " << fd.get_file(i)->get_name() << " and file " << fd.get_file(j)->get_name() << " are the same." << endl;
             }
         }
     }
