@@ -1,10 +1,14 @@
 #include "preprocess.h"
 
-void preprocess::set_args(){
-    cout << "请输入文件夹路径: ";
-    cin >> _path;
-    cout << endl << "请输入文件夹名: ";
-    cin >> _name;
+preprocess::preprocess() {}
+
+preprocess::preprocess(string path, string name)
+    :   _path(path)
+    ,   _name(name) {}
+
+void preprocess::display_args(){
+    cout << "文件夹路径: " << _path << endl;
+    cout << "文件夹名: " << _name << endl;
 }
 
 folder* preprocess::init_folder(){
