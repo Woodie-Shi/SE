@@ -10,7 +10,8 @@ const int TEST_NUM = 10;
 int main(){
     // create output dir
     string outpath = "./output";
-    filesystem::create_directory(outpath);
+    
+    if(!filesystem::exists(outpath)) filesystem::create_directory(outpath);
     ofstream equ(outpath + "/equal.csv");
     ofstream inequ(outpath + "/inequal.csv");
     equ << "file1" << "," << "file2" << endl;
@@ -28,11 +29,10 @@ int main(){
         pre->display_args();
         folder* fd =  new folder{};
         fd = pre->init_folder();
-        fd->display();
+        //fd->display();
         sets *sts = new sets{};
         sts->resize(fd->get_num());
         pre->find_same(*fd, *sts);
-        // 考虑判断一下全部相同
 
         testcase* tc = new testcase(inpath + "/" + fd->get_name(), "stdin_format.txt");
         tc->read_data();
@@ -45,13 +45,15 @@ int main(){
         else{
             judgement->compare(*fd, *sts);
 
-            cout<<"compared finished."<<endl;
+            cout << "compare finished" << endl;
+
             output* result = new output{};
             bool success = result->save(*fd, *sts);
-            if(success) cout << "finished." <<endl;
-            else cout << "failed" <<endl;
+            if(success) cout << "finished" <<endl << endl;
+            else cout << "failed" <<endl << endl;
             delete result;
         }
+        tc->delcases();
         delete pre, fd, sts, tc, judgement;
     }
     delete root;
