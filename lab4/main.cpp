@@ -28,6 +28,7 @@ int main(){
         pre->display_args();
         folder* fd =  new folder{};
         fd = pre->init_folder();
+        fd->display();
         sets *sts = new sets{};
         sts->resize(fd->get_num());
         pre->find_same(*fd, *sts);
@@ -39,12 +40,19 @@ int main(){
         tc->create(TEST_NUM);
 
         judge* judgement = new judge{};
-        judgement->execute(*fd, TEST_NUM);
-        judgement->compare(*fd, *sts);
+        bool exe = judgement->execute(*fd, TEST_NUM);
+        if(!exe) cout<<"error in executing."<<endl;
+        else{
+            judgement->compare(*fd, *sts);
 
-        output* result = new output{};
-        result->save(*fd, *sts);
-        delete pre, fd, sts, tc, judgement, result;
+            cout<<"compared finished."<<endl;
+            output* result = new output{};
+            bool success = result->save(*fd, *sts);
+            if(success) cout << "finished." <<endl;
+            else cout << "failed" <<endl;
+            delete result;
+        }
+        delete pre, fd, sts, tc, judgement;
     }
     delete root;
 }
