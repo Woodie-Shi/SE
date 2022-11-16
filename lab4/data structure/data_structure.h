@@ -83,6 +83,7 @@ public:
     char generate_char(mt19937& generator);
     string generate_str(int lower, int upper, mt19937& generator);
     bool create(int num);
+    void delcases();
 };
 
 #endif

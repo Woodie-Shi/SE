@@ -38,6 +38,7 @@ void folder::read_file(){
     for (const auto & entry : filesystem::directory_iterator(path)){
         string str = entry.path().filename().string();
         if(str == "stdin_format.txt") continue;
+        if(str.length() > 4 && str.substr(str.length() - 4).compare(".exe") == 0) continue;
         _file_name.push_back(str);
         ++_file_num;
         file *f = new file(path, str);
@@ -60,7 +61,7 @@ void folder::read_file_name(){
 string folder::get_path() { return _path; }
 string folder::get_name() { return _name; }
 int folder::get_num() { return _file_num; }
-string folder::get_file_name(int no) { return _files[no].get_name(); }
+string folder::get_file_name(int no) { return _file_name[no]; }
 
 file* folder::get_file(int no){
     return &_files[no];
@@ -210,6 +211,9 @@ string testcase::generate_str(int lower, int upper, mt19937& generator){
 
 bool testcase::create(int num){
     string newpath = get_path() + "/testcases";
+    if(filesystem::exists(newpath)){
+        delcases();
+    }
     bool success = filesystem::create_directory(newpath);
     if(!success){
         cout << "Error to create testcase dir." << endl;
@@ -239,4 +243,10 @@ bool testcase::create(int num){
         outfile.close();
     }
     return true;
+}
+
+void testcase::delcases(){
+    string del = "rm -r ";
+    del += (get_path() + "/testcases");
+    system(del.c_str());
 }
