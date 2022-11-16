@@ -66,25 +66,26 @@ void judge::compare(folder &fd, sets& sts){
     for(int i = 0;i < n - 1;i++){
         file* fa = fd.get_file(i);
         if(fa->get_same()) continue;
-        string fdaname = fa->get_name();
-        fdaname.erase(fdaname.length() - 4, 4);
-        folder *fda = new folder(fa->get_path(), fdaname);
-        fda->read_file_name();
+        string fafdname = fa->get_name();
+        fafdname.erase(fafdname.length() - 4, 4);
+        folder *fda = new folder(fa->get_path(), fafdname);
+        fda->read_file();
         for(int j = i + 1;j < n;j++){
             // already equivalent
             if(sts.find(i, j)) continue;
 
             file* fb = fd.get_file(j);
             if(fb->get_same()) continue;
-            string fdbname = fb->get_name();
-            fdbname.erase(fdbname.length() - 4, 4);
-            folder *fdb = new folder(fb->get_path(), fdbname);
-            fdb->read_file_name();
+            string fbfdname = fb->get_name();
+            fbfdname.erase(fbfdname.length() - 4, 4);
+            folder *fdb = new folder(fb->get_path(), fbfdname);
+            fdb->read_file();
 
             if(fda->get_num() != fdb->get_num()){
                 cout << "cannot compare " << i << "and " << j << ", the num of testcases' outputs are not equal" << endl;
                 continue;
             }
+            cout << "compare " << fa->get_name() << " & " << fb->get_name() << endl;
             bool euqivant = 1;
             for(int t = 0;t < fda->get_num();t++){
                 file* ta = fda->get_file(t);
@@ -95,8 +96,19 @@ void judge::compare(folder &fd, sets& sts){
                 }
             }
             if(euqivant) sts.add_to(i, j);
-            delete fdb;
         }
+        //delete dir
+        string deda = "rm -r ";
+        deda += (fda->get_path() + "/" + fda->get_name());
+        system(deda.c_str());
         delete fda;
+    }
+    file* ff = fd.get_file(n - 1);
+    if(!ff->get_same()){
+        string ffdname = ff->get_name();
+        ffdname.erase(ffdname.length() - 4, 4);
+        string del = "rm -r ";
+        del += (ff->get_path() + "/" + ffdname);
+        system(del.c_str());
     }
 }
