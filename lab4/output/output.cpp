@@ -23,4 +23,5 @@ bool output::save(folder& fd, sets& sts){
     }
     e.close();
     ne.close();
+    return true;
 }
