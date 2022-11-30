@@ -34,12 +34,10 @@ void menu::display(int kind, vector<pair<string, string>> &vec){
         if(equal_index < n){
             file* f1 = new file("./" + vec[equal_index].first);
             f1->read_data();
-
             ui->file1->setFrameShape (QFrame::Box);
             ui->file1->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");
             ui->file1->setWordWrap(true);
             ui->file1->setText(QString::fromStdString(f1->get_data()));
-
 
             file* f2 = new file("./" + vec[equal_index++].second);
             f2->read_data();
@@ -47,6 +45,10 @@ void menu::display(int kind, vector<pair<string, string>> &vec){
             ui->file2->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");
             ui->file2->setWordWrap(true);
             ui->file2->setText(QString::fromStdString(f2->get_data()));
+
+            ui->hint->setAlignment(Qt::AlignHCenter);
+            ui->hint->setWordWrap(true);
+            ui->hint->setText("等价");
 
         }
         else{
@@ -72,6 +74,10 @@ void menu::display(int kind, vector<pair<string, string>> &vec){
             ui->file2->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");
             ui->file2->setWordWrap(true);
             ui->file2->setText(QString::fromStdString(f2->get_data()));
+
+            ui->hint->setAlignment(Qt::AlignHCenter);
+            ui->hint->setWordWrap(true);
+            ui->hint->setText("不等价");
         }
         else{
             if(change == 0){
