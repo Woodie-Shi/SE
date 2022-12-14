@@ -8,7 +8,7 @@ file::file(QObject *parent) : QObject(parent)
 
 file::file() {}
 
-file::file(string path)
+file::file(string &path)
     :   _path(path) {}
 
 void file::read_data() {

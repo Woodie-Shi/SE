@@ -32,14 +32,16 @@ void menu::display(int kind, vector<pair<string, string>> &vec){
 
     if(kind == 1){
         if(equal_index < n){
-            file* f1 = new file("./" + vec[equal_index].first);
+            string f1_path = "./" + vec[equal_index].first;
+            file* f1 = new file(f1_path);
             f1->read_data();
             ui->file1->setFrameShape (QFrame::Box);
             ui->file1->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");
             ui->file1->setWordWrap(true);
             ui->file1->setText(QString::fromStdString(f1->get_data()));
 
-            file* f2 = new file("./" + vec[equal_index++].second);
+            string f2_path = "./" + vec[equal_index++].second;
+            file* f2 = new file(f2_path);
             f2->read_data();
             ui->file2->setFrameShape (QFrame::Box);
             ui->file2->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");
@@ -61,14 +63,16 @@ void menu::display(int kind, vector<pair<string, string>> &vec){
     }
     else if(kind == 2){
         if(inequal_index < n){
-            file* f1 = new file("./" + vec[inequal_index].first);
+            string f11_path = "./" + vec[inequal_index].first;
+            file* f1 = new file(f11_path);
             f1->read_data();
             ui->file1->setFrameShape (QFrame::Box);
             ui->file1->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");
             ui->file1->setWordWrap(true);
             ui->file1->setText(QString::fromStdString(f1->get_data()));
 
-            file* f2 = new file("./" + vec[inequal_index++].second);
+            string f22_path = "./" + vec[inequal_index++].second;
+            file* f2 = new file(f22_path);
             f2->read_data();
             ui->file2->setFrameShape (QFrame::Box);
             ui->file2->setStyleSheet("border-width: 1px;border-style: solid;border-color: rgb(139, 176, 205);");

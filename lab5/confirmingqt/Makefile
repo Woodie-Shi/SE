@@ -1308,6 +1308,27 @@ initial.o: initial.cpp initial.h \
 		menu.h \
 		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QWidget \
 		ui_initial.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qicon.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		result.h \
 		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o initial.o initial.cpp
@@ -1537,6 +1558,28 @@ menu.o: menu.cpp menu.h \
 		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qvector2d.h \
 		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qtouchdevice.h \
 		ui_menu.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/QVariant \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QApplication \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qapplication.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/qeventloop.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qguiapplication.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qinputmethod.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QGridLayout \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlayout.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QLabel \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qframe.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtGui/qicon.h \
+		../../../Qt5.14.2/5.14.2/gcc_64/include/QtWidgets/QVBoxLayout \
 		file.h \
 		../../../Qt5.14.2/5.14.2/gcc_64/include/QtCore/QObject \
 		result.h

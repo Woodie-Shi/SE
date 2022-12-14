@@ -16,7 +16,7 @@ private:
 public:
     explicit file(QObject *parent = nullptr);
     file();
-    file(string path);
+    explicit file(string &path);
     void read_data();
     string get_path();
     string get_data();

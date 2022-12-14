@@ -37,11 +37,11 @@ void initial::init(vector<pair<string, string>> &ve, vector<pair<string, string>
     inequ >> str;
     regex r("(.+),(.+)");
     smatch m1, m2;
-    bool f1, f2;
+    //bool f1, f2;
 
     while(!equ.eof()){
         equ >> str;
-        f1 = regex_match(str, m1, r);
+        bool f1 = regex_match(str, m1, r);
         if(f1){
             ve.push_back(make_pair(m1.str(1), m1.str(2)));
         }
@@ -49,7 +49,7 @@ void initial::init(vector<pair<string, string>> &ve, vector<pair<string, string>
     }
     while(!inequ.eof()){
         inequ >> str;
-        f2 = regex_match(str, m2, r);
+        bool f2 = regex_match(str, m2, r);
         if(f2){
             vine.push_back(make_pair(m2.str(1), m2.str(2)));
         }
