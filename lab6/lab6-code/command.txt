@@ -1,0 +1,23 @@
+使用g++编译单元测试得到UnitTest.exe：
+g++ data_structure.cpp UnitTest.cpp -o UnitTest.exe -lgtest -lpthread
+
+使用g++编译集成测试得到IntegrationTest.exe：
+g++ data_structure.cpp preprocess.cpp judge.cpp output.cpp IntegrationTest.cpp -o IntegrationTest.exe -lgtest -lpthread
+
+使用g++编译单元测试得到UnitTest.exe并用gcov查看覆盖率等信息：
+g++ --coverage -c data_structure.cpp UnitTest.cpp -lgtest -lpthread
+
+g++ --coverage data_structure.o UnitTest.o -o UnitTestTest.exe -lgtest -lpthread
+
+./UnitTestTest.exe
+
+gcov UnitTest
+
+使用g++编译集成测试得到IntegrationTest.exe并用gcov查看覆盖率等信息：
+g++ --coverage -c data_structure.cpp preprocess.cpp judge.cpp output.cpp IntegrationTest.cpp -lgtest -lpthread
+
+g++ --coverage data_structure.o preprocess.o judge.o output.o IntegrationTest.o -o IntegrationTest.exe -lgtest -lpthread
+
+./IntegrationTest.exe
+
+gcov IntegrationTest

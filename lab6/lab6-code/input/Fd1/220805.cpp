@@ -15,20 +15,6 @@ bool divisorGame(int n) {
         return dp[n];
 }
 
-bool divisorGame(int n) {
-        const int m = n + 1;
-        vector<bool> dp(m, false);
-        for(int i = 2; i <= n; ++i){
-            for(int j = 1; j < i; ++j){
-                if(i % j == 0 && !dp[i - j]){ 
-                    dp[i] = true; 
-                    break;
-                }
-            }
-        }
-        return dp[n];
-    }
-
 int main() {
     int n = 0;
     cin >> n;
